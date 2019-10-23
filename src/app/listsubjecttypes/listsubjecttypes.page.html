@@ -1,0 +1,32 @@
+<ion-content>
+  <!-- <ion-searchbar animated="true" placeholder="Search for subject type here..."></ion-searchbar> -->
+  <!-- <ion-button >Add new</ion-button> -->
+
+  <ion-card>
+      <ion-item lines="none" class="each_item">
+          <ion-icon name="search"></ion-icon>
+          <ion-input (ionChange)="onChange($event)" style="margin-left: 10px" type="text" [(ngModel)]="price" placeholder="Search for subject type here..."></ion-input>
+      </ion-item>
+  </ion-card>
+
+  <!-- fab placed to the bottom end -->
+  <ion-fab style="margin-right: 10px" vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="addsubjecttype()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+
+  <ion-card  class="subjectcards" *ngFor="let subjecttype of subtwo; let i = index;" (click)="opensubjecttypedetails(i)">
+    <!-- SDSDFSDFSDF  -->
+    <img src="https://tawsil.mr{{subjecttype.image.url}}">
+
+    <ion-card-header style="font-size: 17px; color: black; font-weight: 600; position: absolute; z-index: 5; top: 1px;">{{subjecttype.name}}
+    <!-- <ion-icon style="float: right; font-size: 26px" name="trash"></ion-icon> -->
+    <!-- <ion-icon style="float: right; font-size: 24px"  name="create"></ion-icon>
+    <ion-icon style="float: right; font-size: 24px" name="eye"></ion-icon> -->
+    </ion-card-header>
+  </ion-card>
+
+  <br>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons style="margin-left: 5px" slot="start">
+          <ion-back-button color="primary" defaultHref="/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Subject Type</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item class="each_item">
+        <!-- <img height="60px" src="../../assets/name.svg" style="margin-right: 15px; zoom: 35%;"> -->
+        <ion-input style="margin-left: 10px" type="text" [(ngModel)]="name" placeholder="Name"></ion-input>
+    </ion-item>
+
+    
+    <!-- <div style="margin-left: 11px; margin-bottom: 1px; ">Logo</div> -->
+    <ion-card (click)="selectImage()">
+        <ion-item lines="none">
+            <ion-icon name="images" item-left></ion-icon>
+              <div style="margin-left: 16px">Upload Image</div>                
+        </ion-item>
+    </ion-card>
+
+    <img style="height: 300px; width: 100%;" [src]="base64Image" *ngIf="base64Image">
+
+    <p align="center">
+        <ion-button (click)="save()" style="width: 90px">
+            <b>Save</b>
+          </ion-button>
+    </p>
+</ion-content>
